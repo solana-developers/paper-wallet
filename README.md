@@ -5,7 +5,7 @@ Paper wallets to seed the [Burner Wallet](https://github.com/austintgriffith/bur
 
 # install
 ```bash
-git clone https://github.com/austintgriffith/paper-wallet
+git clone https://github.com/solana-developers/paper-wallet
 cd paper-wallet
 npm i
 ```
@@ -59,22 +59,3 @@ This will generate a file called `wallets.pdf` and also `addresses.txt` for aird
 Finally... print, fold, cut, and glue your way to freedom!
 
 ![paperwalletprinted](https://user-images.githubusercontent.com/2653167/55584775-48790880-56e2-11e9-93b6-4034c2b0ff5d.jpg)
-
-# air dropping
-
-You will need a distribution account. I would suggest using a mnemonic you can remember in the Burner Wallet and then copy the private key the wallet generates.
-
-You will then pass this private key into the airdrop script within the command you run it with or in a `.env` file:
-
-```
-echo "SENDING_PK=0xdeadbeef" > .env
-```
-
-If this account has the necessary funds on the network `provider`, it will drop whatever you specify in the `AMOUNT_OF_ERC20_TO_SEND` and `AMOUNT_OF_NATIVE_TOKEN_TO_SEND` to all `accounts.json`:
-```
-node airdrop.js
-```
-
-Use the CONFIG options like `justChecking`, `dryRun`, `testRun` for more control and testing.
-
-![walletcutting](https://user-images.githubusercontent.com/2653167/51705234-4440b880-1fd8-11e9-93ed-93338376cfdc.jpg)
