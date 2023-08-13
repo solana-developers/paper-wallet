@@ -1,25 +1,18 @@
-var Web3 = require('web3')
+var web3 = require('@solana/web3.js')
 var fs = require('fs')
-const MINEFOR = false//"da06"
-var web3 = new Web3()
+var bs58 = require('bs58')
+var bip39 = require('bip39');
 
+const MINEFOR = false//"da06"
 
 let AMOUNT = process.argv[2]
 if(!AMOUNT) AMOUNT=1
 
 let accounts
 
-
 for(let a=0;a<AMOUNT;a++){
 
-  let result = ""
-  if(MINEFOR){
-    while(!result.address || result.address.toLowerCase().indexOf("0x"+MINEFOR)!==0){
-      result = web3.eth.accounts.create();
-    }
-  }else{
-    result = web3.eth.accounts.create();
-  }
+  let result = web3.Keypair.generate();
 
   try{
     accounts = JSON.parse(fs.readFileSync("./accounts.json").toString())
@@ -27,11 +20,10 @@ for(let a=0;a<AMOUNT;a++){
     accounts = []
   }
 
-
   accounts.push(
-    {address:result.address,pk:result.privateKey}
+    {address:result.publicKey.toBase58(),pk:bs58.encode(result.secretKey)}
   )
-  console.log(result.address)
+  console.log(result.publicKey.toBase58())
 
   fs.writeFileSync("./accounts.json",JSON.stringify(accounts).toString())
 }

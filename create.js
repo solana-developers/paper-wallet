@@ -1,8 +1,5 @@
-var Web3 = require('web3')
 var qr = require('qr-image')
-let base64url = require('base64url')
 let fs = require("fs")
-var web3 = new Web3()
 
 const COMPRESS = true
 
@@ -11,15 +8,7 @@ let PK = process.argv[3]
 let URL = process.argv[4]
 
 let pkLink
-if(COMPRESS){
-  function pkToUrl(pk) {
-    return base64url(web3.utils.hexToBytes(pk))
-  }
-  let encoded = pkToUrl(PK)
-  pkLink = URL+"/pk#"+encoded
-}else{
-  pkLink = URL+"/pk#"+PK.replace("0x","")
-}
+pkLink = URL+"/claim/"+PK
 //console.log(pkLink)
 var private = qr.image(pkLink, { type: 'png' });
 private.pipe(require('fs').createWriteStream('private.png'));
