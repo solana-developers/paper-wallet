@@ -1,5 +1,5 @@
 # paperwallet
-Paper wallets to seed the [Burner Wallet](https://github.com/austintgriffith/burner-wallet) with private keys.
+Paper wallets to seed the [Burner codes](https://github.com/solana-developers/burner-codes) with private keys.
 
 ![paperwallets](https://user-images.githubusercontent.com/2653167/51704894-6c7be780-1fd7-11e9-8bf9-09d9a55f6943.jpg)
 
@@ -36,8 +36,6 @@ lp wallets.pdf
 -------------------------
 
 You can print out `private.svg` if you are in a pinch.
-
-If you would like me to generate you a special wallet design `cspaperwallet.jpg` hit me up on Twitter or Telegram @austingriffith
 
 ![walletsinfold](https://user-images.githubusercontent.com/2653167/51705218-3ab75080-1fd8-11e9-9495-66458938d9f9.jpg)
 
