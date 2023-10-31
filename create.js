@@ -57,11 +57,6 @@ fs.readFile("template.html", 'utf8', (err,data) => {
         }
      }, function(err, pdf) {
      var output = fs.createWriteStream('./generated.pdf')
-     //console.log(pdf.logs);
-     //console.log(pdf.numberOfPages);
-       // since pdf.stream is a node.js stream you can use it
-       // to save the pdf to a file (like in this example) or to
-       // respond an http request.
      pdf.stream.pipe(output);
      conversion.kill();
      });

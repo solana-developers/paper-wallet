@@ -1,11 +1,9 @@
 var web3 = require('@solana/web3.js')
 var fs = require('fs')
 var bs58 = require('bs58')
-var bip39 = require('bip39');
 
-const MINEFOR = false//"da06"
+var AMOUNT = process.argv[2]
 
-let AMOUNT = process.argv[2]
 if(!AMOUNT) AMOUNT=1
 
 let accounts

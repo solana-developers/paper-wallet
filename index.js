@@ -4,7 +4,7 @@ var merge = require('easy-pdf-merge');
 var fs = require('fs')
 let sources = []
 
-let URL = process.argv[2]
+let URL = 'https://burner.codes'
 
 async function generate(accounts){
   let account

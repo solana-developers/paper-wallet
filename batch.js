@@ -6,8 +6,6 @@ var fs = require('fs')
 
 const HOWMANY = 3
 
-
-
 async function generate() {
 
   let sources = []
@@ -36,6 +34,5 @@ async function generate() {
             }catch(e){console.log(e)}
           });
   });
-
 }
 generate()

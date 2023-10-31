@@ -8,3 +8,5 @@ addresses.txt
 node_modules
 generated*
 *.svg
+yarn.lock
+.DS_Store
